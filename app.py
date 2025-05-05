@@ -595,7 +595,5 @@ app.index_string = '''
 
 # Run the application
 if __name__ == "__main__":
-    print("Starting Workforce Analysis Dashboard...")
-    print(f"Loading HTML files from: {html_dir}")
-    print(f"Assets directory: {assets_dir}")
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port, debug=False)
